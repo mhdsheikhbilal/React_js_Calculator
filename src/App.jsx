@@ -150,7 +150,7 @@ const App = () => {
             </section>
 
             <aside>
-              <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded">
+              <div className="p-4 bg-gray-200 dark:bg-gray-800 rounded">
                 <h2 className="text-lg font-semibold">Logs</h2>
                 <p className="text-sm text-gray-500 mt-2">
                   Database status: {client ? "Configured" : "Not configured"}
@@ -173,10 +173,6 @@ const App = () => {
               <li>Supports + - * / and parentheses and decimals.</li>
               <li>
                 Input validation prevents some invalid operator sequences.
-              </li>
-              <li>
-                Logs are optionally saved to Appwrite if environment is
-                configured.
               </li>
             </ul>
           </footer>
