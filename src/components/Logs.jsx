@@ -9,12 +9,12 @@ const Logs = ({ client, databaseId, collectionId, refreshTrigger }) => {
   const fetchLogs = async () => {
     // Check if client is available
     if (!client) {
-      console.log("Appwrite client not available. Please check connection.");
+      
       return;
     }
 
     if (!databaseId || !collectionId) {
-      console.log("Database or Collection ID not configured.");
+      
       return;
     }
 
@@ -28,12 +28,10 @@ const Logs = ({ client, databaseId, collectionId, refreshTrigger }) => {
       try {
         res = await client.listDocuments(databaseId, collectionId);
       } catch (err1) {
-        console.log("Approach 1 failed, trying empty array...");
-        console.log(client, databaseId, collectionId);
+        
         // Approach 2: Try with empty array
         res = await client.listDocuments(databaseId, collectionId);
       }
-      console.log("Fetched logs:", res);
 
       setLogs(res.rows || []);
     } catch (error) {
@@ -141,7 +139,7 @@ const Logs = ({ client, databaseId, collectionId, refreshTrigger }) => {
           <div
             className="space-y-2 max-h-64 overflow-auto mt-3"
           >
-            {console.log("Logs:", logs)}
+            
             {logs.length === 0 ? (
               <div className="text-center p-4 border border-dashed border-gray-300 dark:border-gray-700 rounded">
                 <div className="text-gray-500">No logs yet</div>

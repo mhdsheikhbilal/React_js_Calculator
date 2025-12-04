@@ -203,19 +203,15 @@ export function safeEvaluate(expr) {
         }
     }
     
-    console.log("Processed expression:", processedExpr);
     
     // Tokenize
     const tokens = tokenize(processedExpr);
-    console.log("Tokens:", tokens);
     
     // Convert to RPN
     const rpn = toRPN(tokens);
-    console.log("RPN:", rpn);
     
     // Evaluate
     const result = evaluateRPN(rpn);
-    console.log("Result:", result);
     
     return result;
 }
